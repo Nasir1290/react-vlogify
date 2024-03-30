@@ -16,9 +16,9 @@ const Header = () => {
       <nav className="container">
         {/* <!-- Logo --> */}
         <div>
-          <a href="./index.html">
+          <Link to={"/"}>
             <img className="w-32" src={LogoIcon} alt="lws" />
-          </a>
+          </Link>
         </div>
 
         {/* <!-- Actions - Login, Write, Home, Search -->

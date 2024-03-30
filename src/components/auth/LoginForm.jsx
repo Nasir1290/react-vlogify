@@ -32,7 +32,7 @@ const LoginForm = () => {
         navigate("/");
       }
     } catch (error) {
-      setError("random.error", {
+      setError("root.random", {
         type: "random",
         message: `Invalid Credentials, email:${formData.email} , password:${formData.password}`,
       });
@@ -74,6 +74,12 @@ const LoginForm = () => {
             }  rounded-md focus:outline-none focus:border-indigo-500`}
           />
         </Field>
+
+        {errors?.root?.random?.message && (
+          <p className=" bg-red-200 text-red-500 p-1 rounded-lg text-center font-semibold mb-1">
+            {errors?.root?.random?.message}
+          </p>
+        )}
 
         <Field>
           <button
