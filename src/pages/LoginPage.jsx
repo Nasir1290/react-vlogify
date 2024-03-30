@@ -1,19 +1,18 @@
 import React from "react";
-import Field from "../common/Field";
 import LoginForm from "../components/auth/LoginForm";
 import Footer from "./Footer";
-import Header from "./Header";
+import Header from "../components/common/Header";
 
 const LoginPage = () => {
   return (
     <>
-    <Header/>
       <main>
         <section className="container">
+          <Header />
           <LoginForm />
+          <Footer />
         </section>
       </main>
-      <Footer />
     </>
   );
 };

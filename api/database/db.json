@@ -69,8 +69,23 @@
           "id": "0c359e0e17411aad2703",
           "title": "Success in Life",
           "tags": "Ideas,Service,Passion,Focus,Success"
+        },
+        {
+          "id": "7c12b4b48531bcc995ae",
+          "title": "A guide to Prototype in JavaScript",
+          "tags": "programming, algorithm, prototype, javascript"
         }
       ]
+    },
+    {
+      "id": "b705adc7934bb4eb3bab",
+      "email": "atapas@email.com",
+      "firstName": "Tapas",
+      "lastName": "Adhikary",
+      "avatar": null,
+      "bio": "",
+      "password": "$2b$08$zrOwV8rsfRnIr6o1ghwMJ./l0LjTXYvWenOA2UThDB5MWRaM5XHmm",
+      "favourites": []
     }
   ],
   "blogs": [
@@ -95,6 +110,9 @@
         },
         {
           "id": "3d2dde4b6548275fb066"
+        },
+        {
+          "id": "2d6e7609eae49ebf01af"
         }
       ],
       "comments": [
@@ -129,7 +147,8 @@
           }
         }
       ],
-      "createdAt": "2024-02-24T09:09:01.121Z"
+      "createdAt": "2024-02-24T09:09:01.121Z",
+      "isFavourite": false
     },
     {
       "id": "4321b782f360f58c8c85",
@@ -302,9 +321,14 @@
         "avatar": "avatar-1708764856675-623317122.jpg"
       },
       "tags": "programming, algorithm",
-      "likes": [],
+      "likes": [
+        {
+          "id": "2d6e7609eae49ebf01af"
+        }
+      ],
       "comments": [],
-      "createdAt": "2024-02-24T09:04:21.871Z"
+      "createdAt": "2024-02-24T09:04:21.871Z",
+      "isFavourite": false
     },
     {
       "id": "9d5598ab44600a379103",

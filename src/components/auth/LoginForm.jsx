@@ -1,10 +1,14 @@
 import React from "react";
-import Field from "../../common/Field";
+import Field from "../common/Field";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
 
 const LoginForm = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+
+  const { setAuth } = useAuth();
+
   const {
     register,
     handleSubmit,
@@ -14,7 +18,9 @@ const LoginForm = () => {
 
   const onLogin = (formData) => {
     console.log(formData);
-    navigate("/home")
+    const user = { ...formData };
+    setAuth({ user });
+    navigate("/");
   };
 
   return (
@@ -30,7 +36,7 @@ const LoginForm = () => {
             id="email"
             name="email"
             className={`w-full p-3 bg-[#030317] border border-${
-              errors.password ? "red-500" : "white/20"
+              errors.email ? "red-500" : "white/20"
             } rounded-md focus:outline-none `}
           />
         </Field>
@@ -41,14 +47,14 @@ const LoginForm = () => {
               required: "Password is required",
               minLength: {
                 value: 8,
-                message: "password must be atleast 8 character's logn",
+                message: "password must be atleast 8 character's long",
               },
             })}
             type="password"
             id="password"
             name="password"
             className={`w-full p-3 bg-[#030317] border border-${
-              errors.password ? "red-500" : "white/20"
+              errors.password ? "red-500" : "border-white/20"
             }  rounded-md focus:outline-none focus:border-indigo-500`}
           />
         </Field>
