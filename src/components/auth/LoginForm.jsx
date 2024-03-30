@@ -3,6 +3,7 @@ import Field from "../common/Field";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
+import axios from "axios";
 
 const LoginForm = () => {
   const navigate = useNavigate();
@@ -16,11 +17,26 @@ const LoginForm = () => {
     setError,
   } = useForm();
 
-  const onLogin = (formData) => {
-    console.log(formData);
-    const user = { ...formData };
-    setAuth({ user });
-    navigate("/");
+  const onLogin = async (formData) => {
+    // Make an API call
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_SERVER_BASE_URL}/auth/login`,
+        formData
+      );
+      if (response.status === 200) {
+        const { user, token } = response.data;
+        const authToken = token.accessToken;
+        const refreshToken = token.refreshToken;
+        setAuth({ user, authToken, refreshToken });
+        navigate("/");
+      }
+    } catch (error) {
+      setError("random.error", {
+        type: "random",
+        message: `Invalid Credentials, email:${formData.email} , password:${formData.password}`,
+      });
+    }
   };
 
   return (
