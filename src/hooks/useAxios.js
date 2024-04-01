@@ -12,7 +12,7 @@ const useAxios = () => {
 
         // add a request interceptor....
 
-        const requestIntecept = api.interceptors.request.use(
+        const requestIntercept = api.interceptors.request.use(
             (config) => {
                 const authToken = auth?.authToken;
                 if (authToken) {
@@ -56,16 +56,28 @@ const useAxios = () => {
                             authToken: token
                         })
 
-                        originalRequest.Authorization = `Bearer ${token}`;
+                        originalRequest.headers.Authorization = `Bearer ${token}`;
+
+                        return axios(originalRequest);
 
                     } catch (error) {
-                        ""
+                        console.error(error);
                     }
+
                 }
+
+                Promise.reject(error);
             }
 
         )
 
-    }, [auth?.authToken]);
+        return () => {
+            api.interceptors.request.eject(requestIntercept);
+            api.interceptors.response.eject(responseIntercept);
+        }
+
+    }, [auth, auth?.authToken]);
+
+    return { api };
 
 }

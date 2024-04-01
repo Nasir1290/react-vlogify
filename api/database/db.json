@@ -86,6 +86,16 @@
       "bio": "",
       "password": "$2b$08$zrOwV8rsfRnIr6o1ghwMJ./l0LjTXYvWenOA2UThDB5MWRaM5XHmm",
       "favourites": []
+    },
+    {
+      "id": "72d08cd1d81bd9df2829",
+      "email": "test@mail.com",
+      "firstName": "test",
+      "lastName": "test",
+      "avatar": "avatar-1711785477918-766530465.jpg",
+      "bio": "",
+      "password": "$2b$08$91ZzkWy5/c99l1Z57HxZ8en5VA540WfMn0g7SB8JuAUEf0Dc72vUq",
+      "favourites": []
     }
   ],
   "blogs": [
@@ -377,6 +387,23 @@
       "likes": [],
       "comments": [],
       "createdAt": "2024-02-24T17:06:43.629Z"
+    },
+    {
+      "id": "0a27d193870f38285ab5",
+      "title": "book Finder",
+      "content": "book finder is a awesome app for finding book and get rented",
+      "thumbnail": "thumbnail-1711785125246-637106569.png",
+      "author": {
+        "id": "72d08cd1d81bd9df2829",
+        "firstName": "test",
+        "lastName": "test",
+        "avatar": null
+      },
+      "tags": "book,text,find",
+      "likes": [],
+      "comments": [],
+      "createdAt": "2024-03-30T07:52:06.932Z",
+      "isFavourite": false
     }
   ]
 }
